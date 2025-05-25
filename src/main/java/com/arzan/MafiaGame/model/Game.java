@@ -28,4 +28,9 @@ public class Game {
     private String gameState;
 
     private String clue;
+
+    private List<ChatMessage> generalMsg = new ArrayList<>();
+    private List<ChatMessage> mafiaMsg = new ArrayList<>();
+    private List<ChatMessage> doctorMsg = new ArrayList<>();
+    private List<ChatMessage> policeMsg = new ArrayList<>();
 }
