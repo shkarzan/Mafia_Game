@@ -20,35 +20,22 @@ public class ChatController {
     @MessageMapping("/chat/general")
 //    @SendTo("/topic/general")
     public void sendGeneral(ChatMessage message){
-        Game game = gameRepo.findByGameCode(message.getGameCode());
-        game.getGeneralMsg().add(message);
-        gameRepo.save(game);
-        messagingTemplate.convertAndSend("/topic/general/"+message.getGameCode(),game.getGeneralMsg());
+        messagingTemplate.convertAndSend("/topic/general/"+message.getGameCode(),message);
     }
 
     @MessageMapping("/chat/mafia")
 //    @SendTo("/topic/mafia")
     public void sendMafia(ChatMessage message) {
-        Game game = gameRepo.findByGameCode(message.getGameCode());
-        game.getMafiaMsg().add(message);
-        gameRepo.save(game);
-        messagingTemplate.convertAndSend("/topic/mafia/"+message.getGameCode(),game.getMafiaMsg());
+        messagingTemplate.convertAndSend("/topic/mafia/"+message.getGameCode(),message);
     }
 
     @MessageMapping("/chat/police")
     public void sendPolice(ChatMessage message){
-        Game game = gameRepo.findByGameCode(message.getGameCode());
-        game.getPoliceMsg().add(message);
-        gameRepo.save(game);
-
-        messagingTemplate.convertAndSend("/topic/police/"+message.getGameCode(),game.getPoliceMsg());
+        messagingTemplate.convertAndSend("/topic/police/"+message.getGameCode(),message);
     }
 
     @MessageMapping("/chat/doctor")
     public void sendDoctor(ChatMessage message){
-        Game game = gameRepo.findByGameCode(message.getGameCode());
-        game.getDoctorMsg().add(message);
-        gameRepo.save(game);
-        messagingTemplate.convertAndSend("/topic/doctor/"+message.getGameCode(),game.getDoctorMsg());
+        messagingTemplate.convertAndSend("/topic/doctor/"+message.getGameCode(),message);
     }
 }
