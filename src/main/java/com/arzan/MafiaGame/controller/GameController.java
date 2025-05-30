@@ -46,7 +46,7 @@ public class GameController {
         Game game = gameRepo.findByGameCode(gameCode);
         if(game != null){
             List<Player> players = game.getPlayers();
-            if(players.size() < 8) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Not enough players to start the game");
+            if(players.size() < 6) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Not enough players to start the game");
             List<String> roles = new ArrayList<>();
             roles.add("Police");
             roles.add("Doctor");
