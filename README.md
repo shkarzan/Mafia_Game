@@ -82,17 +82,5 @@ spring.jpa.hibernate.ddl-auto=update
 
 spring.datasource.hikari.maximum-pool-size=10
 
-#spring.web.resources.static-locations=classpath:/static/
-
-#spring.mvc.pathmatch.matching-strategy=ant_path_matcher
-
-#spring.thymeleaf.check-template-location=false
-
-
-#server.compression.enabled=true
-
-#server.compression.mime-types=application/json,application/xml,text/html,text/xml,text/plain,text/css,text/javascript,application/javascript
-
-#server.compression.min-response-size=1024
 
 
