@@ -54,7 +54,7 @@ cd mafia-game-backend
 # Build and run
 ./mvnw spring-boot:run
 ```
-Also add src/main/resources and inside resources add application.properties with this
+# Also add src/main/resources and inside resources add application.properties with this
 
 spring.application.name=MafiaGame
 
